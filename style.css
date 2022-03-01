@@ -1,0 +1,12 @@
+body
+{
+  height: 900vh;
+}
+
+
+.title-sphere
+{
+  position: relative;
+  top: 50vh;
+  background-attachment: fixed;
+}
