@@ -1,13 +1,19 @@
 var titleSphere = document.querySelector('#titleSphere');
-var yPos = window.scrollY;
+const titlesCount = document.getElementsByClassName('title').length;
 
-console.log(yPos);
-
-for (;;)
+const titles = [];
+for (let i = 1; i <= titlesCount; i++)
 {
-  if (1000 < yPos)
+  titles.push(document.querySelector('#title' + String(i)));
+}
+
+setInterval(loop, 20);
+
+function loop()
+{
+  console.log(window.scrollY);
+  for (let i = 0; i < titles.length; i++)
   {
-    alert("yPos bigger than 1000");
-    var timeout = setTimeout()
+    titles[i].style="transform: translateY(-50%) rotate("+String(window.scrollY+45*i)+"deg);";
   }
 }

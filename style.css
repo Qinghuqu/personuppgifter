@@ -1,12 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
+
 body
 {
-  height: 900vh;
+  height: 9000000vh;
+}
+
+
+*
+{
+  margin: 0;
 }
 
 
 .title-sphere
 {
-  position: relative;
+  position: fixed;
   top: 50vh;
-  background-attachment: fixed;
+  transform: translateY(-50%);
+}
+
+.title
+{
+  position: fixed;
+  top: 50vh;
+  left: 1.5rem;
+  transform-origin: -1rem center;
+  font-family: 'Cutive Mono', monospace;
 }
