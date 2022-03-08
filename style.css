@@ -3,7 +3,7 @@
 
 body
 {
-  height: 9000000vh;
+  height: 5000px;
 }
 
 
@@ -27,4 +27,6 @@ body
   left: 1.5rem;
   transform-origin: -1rem center;
   font-family: 'Cutive Mono', monospace;
+  transition: opacity 1s, transform 1s;
+  visibility: hidden;
 }
