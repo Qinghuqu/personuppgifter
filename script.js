@@ -1,33 +1,30 @@
 let titleSphere = document.querySelector('#titleSphere');
-let titlesCount = document.getElementsByClassName('title').length;
+let titles = document.getElementsByClassName('title');
+let titlesCount = titles.length;
 
-let titles = [];
-for (let i = 1; i <= titlesCount; i++)
-{
-  titles.push(document.querySelector('#title' + String(i)));
-}
 
 
 let yPos = window.scrollY;
 let yPosFloor = Math.floor(yPos/400);
 let yPosFloorLegacy = yPosFloor;
 
+console.log(titles);
 
-for (let i = 0; i < titlesCount; i++)
+let i = 0;
+let n = 0;
+
+for (i = 0; i < titlesCount; i++)
 {
   titles[i].style="transform: translateY(-50%) rotate("+String(45*(yPosFloor-i))+"deg);";
+  titles[i].addEventListener('click', function(){
+    window.scroll(0, i * 400);
+  })
 }
+
 
 
 setInterval(loop, 20);
 
-
-for (let i = 0; i <= titlesCount; i++)
-{
-  titles[i].addEventListener("click", function() {
-    window.scrollY = i * 400;
-  });
-}
 
 for (let i = -3; i <= 3; i++)
 {
@@ -55,7 +52,7 @@ function loop()
       titles[i].style = "transform: translateY(-50%) rotate("+String(45*(yPosFloor-i))+"deg);";
     }
 
-    for (i = -3; i <= 3; i++)
+    for (let i = -3; i <= 3; i++)
     {
       try
       {

@@ -3,13 +3,24 @@
 
 body
 {
-  height: 5000px;
+  height: calc(5600px + 100vh);
 }
 
 
 *
 {
   margin: 0;
+}
+
+
+main
+{
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  position: fixed;
+  left: 50vw;
+  transform: translateX(-50%);
 }
 
 
@@ -29,4 +40,13 @@ body
   font-family: 'Cutive Mono', monospace;
   transition: opacity 1s, transform 1s;
   visibility: hidden;
+  cursor: pointer;
+}
+
+
+.answer-sphere
+{
+  position: fixed;
+  top: 0;
+  right: 0;
 }
