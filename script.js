@@ -1,3 +1,7 @@
+let answerCircle = document.querySelector('#answerCircle');
+
+answerCircle.setAttribute('r', document.querySelector('#answerCircleContainer').clientWidth);
+
 let titleSphere = document.querySelector('#titleSphere');
 let titles = document.getElementsByClassName('title');
 let titlesCount = titles.length;
@@ -10,10 +14,12 @@ let yPosFloorLegacy = yPosFloor;
 
 console.log(titles);
 
-let i = 0;
+let j = 0;
+let m = 0;
 let n = 0;
 
-for (i = 0; i < titlesCount; i++)
+
+for (let i = 0; i < titlesCount; i++)
 {
   titles[i].style="transform: translateY(-50%) rotate("+String(45*(yPosFloor-i))+"deg);";
   titles[i].addEventListener('click', function(){
@@ -22,23 +28,22 @@ for (i = 0; i < titlesCount; i++)
 }
 
 
-
 setInterval(loop, 20);
 
 
-for (let i = -3; i <= 3; i++)
+for (let j = -3; j <= 3; j++)
 {
   try
   {
-    titles[yPosFloor + i].style.visibility = "visible";
-    titles[yPosFloor + i].style.opacity = Math.cos(2 * Math.PI / 12 * i);
+    titles[yPosFloor + j].style.visibility = "visible";
+    titles[yPosFloor + j].style.opacity = Math.cos(2 * Math.PI / 12 * j);
   }
   catch(e){}
 }
 titles[yPosFloor].style.fontWeight = "bold";
 
 
-function loop()
+function loop(n)
 {
   yPos = window.scrollY;
   console.log(yPos);
@@ -47,17 +52,17 @@ function loop()
 
   if (yPosFloor != yPosFloorLegacy)
   {
-    for (let i = 0; i < titlesCount; i++)
+    for (m = 0; m < titlesCount; m++)
     {
-      titles[i].style = "transform: translateY(-50%) rotate("+String(45*(yPosFloor-i))+"deg);";
+      titles[m].style = "transform: translateY(-50%) rotate("+String(45*(yPosFloor-m))+"deg);";
     }
 
-    for (let i = -3; i <= 3; i++)
+    for (n = -3; n <= 3; n++)
     {
       try
       {
-        titles[yPosFloor + i].style.visibility = "visible";
-        titles[yPosFloor + i].style.opacity = Math.cos(2 * Math.PI / 12 * i);
+        titles[yPosFloor + n].style.visibility = "visible";
+        titles[yPosFloor + n].style.opacity = Math.cos(2 * Math.PI / 12 * n);
       }
       catch(e) {}
     }

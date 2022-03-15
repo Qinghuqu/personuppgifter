@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 
+
+
+
 body
 {
   height: calc(5600px + 100vh);
@@ -44,7 +47,7 @@ main
 }
 
 
-.answer-sphere
+.answer-circle-container
 {
   position: fixed;
   top: 0;
