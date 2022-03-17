@@ -1,6 +1,12 @@
-let answerCircle = document.querySelector('#answerCircle');
+let answer = document.querySelector('#answer');
 
-answerCircle.setAttribute('r', document.querySelector('#answerCircleContainer').clientWidth);
+answer.addEventListener('click', function(){
+  answer.style="animation: "
+});
+
+
+
+let answerCircle = document.querySelector('#answerCircle');
 
 let titleSphere = document.querySelector('#titleSphere');
 let titles = document.getElementsByClassName('title');
@@ -69,6 +75,7 @@ function loop(n)
 
     titles[yPosFloor].style.fontWeight = "bold";
   }
+
 
   yPosFloorLegacy = yPosFloor;
 }

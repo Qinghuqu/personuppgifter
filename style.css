@@ -6,6 +6,7 @@
 
 body
 {
+  width: 100vw;
   height: calc(5600px + 100vh);
 }
 
@@ -43,13 +44,40 @@ main
   font-family: 'Cutive Mono', monospace;
   transition: opacity 1s, transform 1s;
   visibility: hidden;
+  text-shadow: 0 0 5px white;
   cursor: pointer;
 }
 
 
 .answer-circle-container
 {
+  width: 70vw;
+  height: 140vw;
   position: fixed;
-  top: 0;
+  top: 50vh;
+  transform: translateY(-50%);
   right: 0;
+}
+
+.answer
+{
+  position: fixed;
+  right: 50vw;
+  top: 50vh;
+  transition: transform 1s;
+  transform: translateY(-50%);
+  transform-origin: 50vw center;
+  color: white;
+}
+
+@keyframe answer-change-down
+{
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(-50%) rotate(180deg);
+    opacity:
+  }
+
 }
