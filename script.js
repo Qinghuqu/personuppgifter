@@ -1,7 +1,25 @@
 let answer = document.querySelector('#answer');
 
-answer.addEventListener('click', function(){
-  answer.style="animation: "
+/*
+let animate;
+
+function changeRotation(degree)
+{
+  answer.style = "transform: rotate(" + String(degree+1) + "deg);"
+  if (degree + 1 < 180)
+  {
+    animate = setTimeout(changeRotation(degree + 1), 11);
+  }
+}
+*/
+
+answer.addEventListener('click', function()
+{
+
+  /*
+  changeRotation(0);
+  */
+
 });
 
 
@@ -52,7 +70,6 @@ titles[yPosFloor].style.fontWeight = "bold";
 function loop(n)
 {
   yPos = window.scrollY;
-  console.log(yPos);
 
   yPosFloor = Math.floor(yPos/400);
 

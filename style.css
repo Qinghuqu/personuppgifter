@@ -70,14 +70,15 @@ main
   color: white;
 }
 
-@keyframe answer-change-down
+@keyframes answer-change-down
 {
-  from {
+  from
+  {
     transform: translateY(-50%);
   }
-  to {
+  to
+  {
     transform: translateY(-50%) rotate(180deg);
-    opacity:
   }
 
 }
