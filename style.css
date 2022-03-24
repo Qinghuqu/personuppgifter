@@ -70,15 +70,95 @@ main
   color: white;
 }
 
+.next-answer
+{
+  position: fixed;
+  right: 50vw;
+  top: 50vh;
+  transition: transform 1s;
+  transform: translateY(-50%) rotate(180deg);
+  opacity: 0;
+  transform-origin: 50vw center;
+  color: white;
+}
+
+.last-answer
+{
+  position: fixed;
+  right: 50vw;
+  top: 50vh;
+  transition: transform 1s;
+  transform: translateY(-50%) rotate(-180deg);
+  opacity: 0;
+  transform-origin: 50vw center;
+  color: white;
+}
+
+
 @keyframes answer-change-down
 {
   from
   {
     transform: translateY(-50%);
+    opacity: 1;
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  to
+  {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+}
+
+@keyframes next-answer-change-down
+{
+  from
+  {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  to
+  {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes answer-change-up
+{
+  from
+  {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  50%
+  {
+    opacity: 0;
   }
   to
   {
     transform: translateY(-50%) rotate(180deg);
   }
+}
 
+@keyframes last-answer-change-up
+{
+  from
+  {
+    transform: translateY(-50%) rotate(-180deg);
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  to
+  {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
 }

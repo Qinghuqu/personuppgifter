@@ -1,4 +1,3 @@
-let answer = document.querySelector('#answer');
 
 /*
 let animate;
@@ -13,14 +12,31 @@ function changeRotation(degree)
 }
 */
 
+let counter = 1;
+
+/*
 answer.addEventListener('click', function()
 {
+  document.body.removeChild(answer);
+  document.body.appendChild(answer);
+  document.body.removeChild(nextAnswer);
+  document.body.appendChild(nextAnswer);
+  answer.style = "animation: answer-change-down 1s;";
+  nextAnswer.style = "animation: next-answer-change-down 1s;";
 
-  /*
+  counter += 1;
+  setTimeout(() =>
+  {
+    answer.innerHTML = "answer" + String(counter);
+    nextAnswer.innerHTML = "answer" + String(counter + 1);
+  },
+  1000);
+
+
   changeRotation(0);
-  */
+  
 
-});
+});*/
 
 
 
@@ -35,6 +51,16 @@ let titlesCount = titles.length;
 let yPos = window.scrollY;
 let yPosFloor = Math.floor(yPos/400);
 let yPosFloorLegacy = yPosFloor;
+
+
+let answer = document.querySelector('#answer');
+let lastAnswer = document.querySelector('#lastAnswer');
+let nextAnswer = document.querySelector('#nextAnswer');
+
+answer.innerHTML = "answer" + String(yPosFloor);
+lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
+nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
+
 
 console.log(titles);
 
@@ -91,6 +117,55 @@ function loop(n)
     }
 
     titles[yPosFloor].style.fontWeight = "bold";
+
+    if (yPosFloor > yPosFloorLegacy)
+    {
+      document.body.removeChild(answer);
+      document.body.appendChild(answer);
+      document.body.removeChild(nextAnswer);
+      document.body.appendChild(nextAnswer);
+
+      answer.style = "animation: answer-change-down 1s;";
+      nextAnswer.style = "animation: next-answer-change-down 1s;";
+
+      counter += 1;
+      setTimeout(() =>
+      {
+        answer.innerHTML = "answer" + String(yPosFloor);
+      },
+      980);
+      setTimeout(() =>
+      {
+        nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
+        lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
+      },
+      1020);
+    }
+
+    if (yPosFloor < yPosFloorLegacy)
+    {
+      document.body.removeChild(answer);
+      document.body.appendChild(answer);
+      document.body.removeChild(lastAnswer);
+      document.body.appendChild(lastAnswer);
+
+      answer.style = "animation: answer-change-up 1s;";
+      lastAnswer.style = "animation: last-answer-change-up 1s;";
+
+      counter -= 1;
+
+      setTimeout(() =>
+      {
+        answer.innerHTML = "answer" + String(yPosFloor);
+      },
+      980);
+      setTimeout(() =>
+      {
+        nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
+        lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
+      },
+      1020);
+    }
   }
 
 
