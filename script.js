@@ -34,7 +34,7 @@ answer.addEventListener('click', function()
 
 
   changeRotation(0);
-  
+
 
 });*/
 
@@ -93,6 +93,10 @@ for (let j = -3; j <= 3; j++)
 titles[yPosFloor].style.fontWeight = "bold";
 
 
+let timeout1, timeout2, timeout3;
+let isRotating = false;
+
+
 function loop(n)
 {
   yPos = window.scrollY;
@@ -120,21 +124,34 @@ function loop(n)
 
     if (yPosFloor > yPosFloorLegacy)
     {
-      document.body.removeChild(answer);
-      document.body.appendChild(answer);
-      document.body.removeChild(nextAnswer);
-      document.body.appendChild(nextAnswer);
+      if (isRotating == false)
+      {
+        document.body.removeChild(answer);
+        document.body.appendChild(answer);
+        document.body.removeChild(nextAnswer);
+        document.body.appendChild(nextAnswer);
+      }
 
       answer.style = "animation: answer-change-down 1s;";
       nextAnswer.style = "animation: next-answer-change-down 1s;";
 
       counter += 1;
-      setTimeout(() =>
+
+      clearTimeout(timeout3);
+      timeout3 = setTimeout(() =>
+      {
+        isRotating = false;
+      },
+      1000);
+
+      clearTimeout(timeout1);
+      timeout1 = setTimeout(() =>
       {
         answer.innerHTML = "answer" + String(yPosFloor);
       },
       980);
-      setTimeout(() =>
+      clearTimeout(timeout2);
+      timeout2 = setTimeout(() =>
       {
         nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
         lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
@@ -154,12 +171,14 @@ function loop(n)
 
       counter -= 1;
 
-      setTimeout(() =>
+      clearTimeout(timeout1);
+      timeout1 = setTimeout(() =>
       {
         answer.innerHTML = "answer" + String(yPosFloor);
       },
       980);
-      setTimeout(() =>
+      clearTimeout(timeout2);
+      timeout2 = setTimeout(() =>
       {
         nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
         lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
