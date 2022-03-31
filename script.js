@@ -1,51 +1,17 @@
-
-/*
-let animate;
-
-function changeRotation(degree)
-{
-  answer.style = "transform: rotate(" + String(degree+1) + "deg);"
-  if (degree + 1 < 180)
-  {
-    animate = setTimeout(changeRotation(degree + 1), 11);
-  }
-}
-*/
-
-let counter = 1;
-
-/*
-answer.addEventListener('click', function()
-{
-  document.body.removeChild(answer);
-  document.body.appendChild(answer);
-  document.body.removeChild(nextAnswer);
-  document.body.appendChild(nextAnswer);
-  answer.style = "animation: answer-change-down 1s;";
-  nextAnswer.style = "animation: next-answer-change-down 1s;";
-
-  counter += 1;
-  setTimeout(() =>
-  {
-    answer.innerHTML = "answer" + String(counter);
-    nextAnswer.innerHTML = "answer" + String(counter + 1);
-  },
-  1000);
-
-
-  changeRotation(0);
-
-
-});*/
-
-
-
 let answerCircle = document.querySelector('#answerCircle');
 
 let titleSphere = document.querySelector('#titleSphere');
 let titles = document.getElementsByClassName('title');
 let titlesCount = titles.length;
 
+
+let answers =
+[
+  {
+    question: 'Vad är GDPR? Vilket är syftet med GDPR?',
+    answerText: 'Dataskyddsförordningen (GDPR) är en europeisk förordning som avser hur personliga uppgifter får hanteras och spridas. Ett av dess syften enligt Integritetsskyddsmyndigheten (imy.se): "Att skydda enskildas grundläggande rättigheter och friheter, särskilt deras rätt till skydd av personuppgifter." Privatliv är en rätt som medborgarna har rätt till, '
+  }
+];
 
 
 let yPos = window.scrollY;
@@ -57,7 +23,7 @@ let answer = document.querySelector('#answer');
 let lastAnswer = document.querySelector('#lastAnswer');
 let nextAnswer = document.querySelector('#nextAnswer');
 
-answer.innerHTML = "answer" + String(yPosFloor);
+answer.innerHTML = "<h1 class='question'>" + answers[0].question + "</h1><p class='answer-text'>" + answers[0].answerText + "</p>";
 lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
 nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
 
@@ -124,66 +90,32 @@ function loop(n)
 
     if (yPosFloor > yPosFloorLegacy)
     {
-      if (isRotating == false)
-      {
-        document.body.removeChild(answer);
-        document.body.appendChild(answer);
-        document.body.removeChild(nextAnswer);
-        document.body.appendChild(nextAnswer);
-      }
+      document.body.removeChild(answer);
+      document.body.appendChild(answer);
+      document.body.removeChild(lastAnswer);
+      document.body.appendChild(lastAnswer);
+
+      answer.innerHTML = "answer" + String(yPosFloor);
+      nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
+      lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
 
       answer.style = "animation: answer-change-down 1s;";
-      nextAnswer.style = "animation: next-answer-change-down 1s;";
-
-      counter += 1;
-
-      clearTimeout(timeout3);
-      timeout3 = setTimeout(() =>
-      {
-        isRotating = false;
-      },
-      1000);
-
-      clearTimeout(timeout1);
-      timeout1 = setTimeout(() =>
-      {
-        answer.innerHTML = "answer" + String(yPosFloor);
-      },
-      980);
-      clearTimeout(timeout2);
-      timeout2 = setTimeout(() =>
-      {
-        nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
-        lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
-      },
-      1020);
+      lastAnswer.style = "animation: last-answer-change-down 1s;";
     }
 
     if (yPosFloor < yPosFloorLegacy)
     {
       document.body.removeChild(answer);
       document.body.appendChild(answer);
-      document.body.removeChild(lastAnswer);
-      document.body.appendChild(lastAnswer);
+      document.body.removeChild(nextAnswer);
+      document.body.appendChild(nextAnswer);
+
+      answer.innerHTML = "answer" + String(yPosFloor);
+      nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
+      lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
 
       answer.style = "animation: answer-change-up 1s;";
-      lastAnswer.style = "animation: last-answer-change-up 1s;";
-
-      counter -= 1;
-
-      clearTimeout(timeout1);
-      timeout1 = setTimeout(() =>
-      {
-        answer.innerHTML = "answer" + String(yPosFloor);
-      },
-      980);
-      clearTimeout(timeout2);
-      timeout2 = setTimeout(() =>
-      {
-        nextAnswer.innerHTML = "answer" + String(yPosFloor + 1);
-        lastAnswer.innerHTML = "answer" + String(yPosFloor - 1);
-      },
-      1020);
+      nextAnswer.style = "animation: next-answer-change-up 1s;";
     }
   }
 

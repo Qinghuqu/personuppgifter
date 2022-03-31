@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 
 body
 {
   width: 100vw;
+  min-width: 800px;
   height: calc(5600px + 100vh);
 }
 
@@ -61,64 +61,48 @@ main
 
 .answer
 {
-  position: fixed;
-  right: 50vw;
-  top: 50vh;
-  transition: transform 1s;
   transform: translateY(-50%);
-  transform-origin: 50vw center;
-  color: white;
 }
 
 .next-answer
 {
-  position: fixed;
-  right: 50vw;
-  top: 50vh;
-  transition: transform 1s;
   transform: translateY(-50%) rotate(180deg);
   opacity: 0;
-  transform-origin: 50vw center;
-  color: white;
 }
 
 .last-answer
 {
-  position: fixed;
-  right: 50vw;
-  top: 50vh;
-  transition: transform 1s;
   transform: translateY(-50%) rotate(-180deg);
   opacity: 0;
+}
+
+.answer-container
+{
+  position: fixed;
+  left: 40vw;
+  top: 50vh;
+  width: 40vw;
+  min-width: 260px;
+  max-width: 600px;
+  transition: transform 1s;
   transform-origin: 50vw center;
   color: white;
 }
 
 
-.answer-container
+.question
 {
-
+  font-family: "DM Sans", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
+.answer-text
+{
+  font-family: "Lato", sans-serif;
+}
 
 @keyframes answer-change-down
-{
-  from
-  {
-    transform: translateY(-50%);
-    opacity: 1;
-  }
-  50%
-  {
-    opacity: 0;
-  }
-  to
-  {
-    transform: translateY(-50%) rotate(-180deg);
-  }
-}
-
-@keyframes next-answer-change-down
 {
   from
   {
@@ -132,6 +116,23 @@ main
   {
     transform: translateY(-50%);
     opacity: 1;
+  }
+}
+
+@keyframes last-answer-change-down
+{
+  from
+  {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  to
+  {
+    transform: translateY(-50%) rotate(-180deg);
   }
 }
 
@@ -139,23 +140,6 @@ main
 {
   from
   {
-    transform: translateY(-50%);
-    opacity: 1;
-  }
-  50%
-  {
-    opacity: 0;
-  }
-  to
-  {
-    transform: translateY(-50%) rotate(180deg);
-  }
-}
-
-@keyframes last-answer-change-up
-{
-  from
-  {
     transform: translateY(-50%) rotate(-180deg);
   }
   50%
@@ -166,5 +150,22 @@ main
   {
     transform: translateY(-50%);
     opacity: 1;
+  }
+}
+
+@keyframes next-answer-change-up
+{
+  from
+  {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  50%
+  {
+    opacity: 0;
+  }
+  to
+  {
+    transform: translateY(-50%) rotate(180deg);
   }
 }
