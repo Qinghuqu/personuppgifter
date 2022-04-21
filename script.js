@@ -24,47 +24,47 @@ let answers =
 
   {
     question: 'Vilka personuppgifter kan du publicera på din hemsida?',
-    answerText: ''
+    answerText: 'I första hand kan personuppgifter publiceras på en webbsida efter godkännandet från den beträffande personen. Det finns däremot andra webbsidor, som <a href="https://hitta.se">hitta.se</a> och <a href="mrkoll.se">mrkoll.se</a> publicerande uppgifter om många medborgare utan deras direkta godkännande. Dessa företag har fått information från myndighetsdatabaser med offentliga uppgifter, som de kan få tillgång till efter att ha ansökt och beviljats utgivningsbevis för de gällande databasen.'
   },
 
   {
     question: 'Vad är det för skillnad på Tryckfrihetsförordningen (TF) och Yttrandefrihetsgrundlagen (YGL)?',
-    answerText: ''
+    answerText: 'Tryckfrihetsförordningen är en grundlag som skyddar individer och organisationers rätt att uttrycka skriftligt i exempelvis böcker och tidskrifter utan förhandsgranskning eller censur. Yttrandefrihetsgrundlagen försäkrar att samma frihet också gäller för muntliga medier, som radio, television, film och ljudtagningar. Information på Internet behandlas under Yttrandefrihetsgrundlagen.'
   },
 
   {
     question: 'Vad går Tryckfrihetsförordningen (TF) och Yttrandefrihetsgrundlagen (YGL) ut på?',
-    answerText: ''
+    answerText: 'Dessa grundlagar skyddar medborgarnas rätt att förmedla sina information och åsikter utan aktiv kontroll från statens. I följd har dessa rättigheter ansetts vara grundlägande för ett demokratiskt samhälle där alla i det poltiska systemet har förutom rätten att påverka beslutsfattandet också en rätt att delta i debatter.'
   },
 
   {
     question: 'Vilka undantag finns från Tryckfrihetsförordningen (TF) och Yttrandefrihetsgrundlagen (YGL)?',
-    answerText: ''
+    answerText: 'Undantagen från Tryckfrihetsförordningen samt Yttrandefrihetsgrundlagen, som kan angå straffbara missbruk under beteckningen <i>tryck- och yttrandefrihetsbrott</i>, är exempelvis olaga våldsskildring, hets mot folkgrupp, förolämpning och förtal.'
   },
 
   {
     question: 'Ett av undantagen har en koppling till känsliga personuppgifter? Vilken?',
-    answerText: ''
+    answerText: 'När det gäller medicinsk information är den belagd med sekretess och kan inte publiceras.'
   },
 
   {
     question: 'Berätta om den ansvarige utgivarens roll då det gäller Tryckfrihetsförordningen (TF) och Yttrandefrihetsgrundlagen (YGL).',
-    answerText: ''
+    answerText: 'För att en publikation eller en media ska skyddas av TF & YGL behöver dessa ha en ansvarig utgivare. Denne erhåller ansvar för information som sprids under den gällande publikationen/median och kan straffas under brott mot grundlagarna.'
   },
 
   {
     question: 'Vad innebär upphovsrätt? Vad omfattas av upphovsrätten?',
-    answerText: ''
+    answerText: 'Upphovsrätt är ett skydd av konstnärligt skapande som automatiskt träder i kraft när verket har kommits till. Den uttrycks som "ensamrätten till en intellektuell prestation i olika former", och innebär att innehavaren kan förbjuda andra att sprida verket. Exempel på omfattade företeelser är texter, datorprogram, musik, film, byggnadskonst och bildkonst.'
   },
 
   {
     question: 'Hur länge gäller upphovsrätten?',
-    answerText: ''
+    answerText: 'Upphovsrätten gäller under rättsinnehavarens hela livstid och under 70 år efter.'
   },
 
   {
     question: 'Får du visa vilken bild som helst på din hemsida?',
-    answerText: ''
+    answerText: 'Nej. När det gäller bilder skyddade av upphovsrätt kan dessa inte publiceras på internet, vilket innebär att göra dem offentliga, utan rättsinnehavarens godkännande. Olika bilder har dock olika typer av licenser. Vissa bilder har getts rätt för alla användningssyften och andra bilder kan användas icke-kommersiella syften. Däremot är det tillåtet att infoga en bild på en hemsida utanför internet för privat bruk.'
   },
 
   {
